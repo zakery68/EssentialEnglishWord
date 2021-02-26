@@ -5,9 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.essentialenglishwords.Json.JsonProcess
+import com.example.essentialenglishwords.Json.Reading
 import com.example.essentialenglishwords.R
 
+val jsonProcess: JsonProcess = JsonProcess()
+
+
 class WordsAdapter(val context: Context):RecyclerView.Adapter<WordHolder>() {
+
+    val listUnit:ArrayList<Reading> = ArrayList<Reading>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordHolder {
         return WordHolder(LayoutInflater.from(context).inflate(R.layout.word_holder,parent,false))
@@ -15,9 +22,20 @@ class WordsAdapter(val context: Context):RecyclerView.Adapter<WordHolder>() {
 
     override fun onBindViewHolder(holder: WordHolder, position: Int) {
 
+//        for (index in 0..30){
+//
+//            holder.pictureUnit.setImageResource(jsonProcess.reading(context,index).image.toInt())
+//
+//            holder.textUnit.setText(jsonProcess.reading(context,index).name)
+//
+//        }
+
+
+
+
     }
 
     override fun getItemCount(): Int {
-        return 1
+        return listUnit.size
     }
 }

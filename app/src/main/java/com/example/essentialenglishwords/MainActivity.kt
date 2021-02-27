@@ -1,10 +1,6 @@
 package com.example.essentialenglishwords
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essentialenglishwords.Json.JsonProcess
@@ -14,7 +10,7 @@ import com.example.essentialenglishwords.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val jsonProcess:JsonProcess= JsonProcess()
+    val jsonProcess: JsonProcess = JsonProcess()
 
 
     lateinit var mainBinding: ActivityMainBinding
@@ -26,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 //        jsonProcess.reading(applicationContext,0)
 
 
-        val adapter:WordsAdapter= WordsAdapter(this@MainActivity)
+        val adapter: WordsAdapter = WordsAdapter(this@MainActivity)
 
         mainBinding.recyclerView.layoutManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
 
@@ -39,17 +35,6 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        val videoView = mainBinding.videoView
-        val uri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.logo_sun)
-        videoView.setVideoURI(uri)
-        videoView.requestFocus()
-        videoView.start()
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            finish()
-            startActivity(Intent(this,LoginActivity::class.java))
-        }, 7100)
     }
-
 
 }

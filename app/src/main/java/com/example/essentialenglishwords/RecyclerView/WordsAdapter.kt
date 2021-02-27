@@ -24,7 +24,7 @@ class WordsAdapter(val context: Context):RecyclerView.Adapter<WordHolder>() {
 
 //        holder.textUnit.text = jsonProcess.reading(context,0).name
 
-        println(">>>"+jsonProcess.reading(context,2).name)
+        println(">>>"+jsonProcess.reading(context,1).name)
 //        holder.pictureUnit.setImageDrawable(jsonProcess.reading(context,position).image)
 
 //        for (index in 0..30){

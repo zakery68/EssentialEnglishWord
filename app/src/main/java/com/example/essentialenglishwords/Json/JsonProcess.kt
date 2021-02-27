@@ -38,7 +38,7 @@ class JsonProcess {
 
         println(">>>$readingArray")
 
-        val readingObject=readingArray.getJSONObject(1)
+        val readingObject=readingArray.getJSONObject(0)
 
         val imageUnit=readingObject.getString("image")
         val nameUnit=readingObject.getString("en")

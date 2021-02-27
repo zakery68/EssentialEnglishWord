@@ -12,7 +12,8 @@ import com.example.essentialenglishwords.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     val jsonProcess: JsonProcess = JsonProcess()
-
+    val dataProcess:DataProcess=DataProcess(this@MainActivity)
+    val adapter: WordsAdapter = WordsAdapter(this@MainActivity)
 
     lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
 
-        val dataProcess:DataProcess=DataProcess(this@MainActivity)
-
-        val adapter: WordsAdapter = WordsAdapter(this@MainActivity)
         dataProcess.save(this,adapter)
-
 
         mainBinding.recyclerView.layoutManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
 

@@ -1,5 +1,7 @@
 package com.example.essentialenglishwords
 
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +17,9 @@ class LoginActivity : AppCompatActivity() {
         loginBinding = LayoutLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
 
+        loginBinding.buttonLogin.setOnClickListener {
+            startActivity(Intent(this@LoginActivity,MainActivity::class.java))
+        }
 
     }
 }

@@ -23,58 +23,18 @@ class MainActivity : AppCompatActivity() {
         mainBinding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        fun reading(context: Context, index:Int): Reading {
-
-            val json=context.assets.open("data/data.json").bufferedReader().readText()
-
-            println(">>>$json")
-
-            val arrayjson= JSONObject(json).getJSONArray("flashcard")
-
-            println(">>>$arrayjson")
-
-            val aaa=arrayjson.getJSONObject(0)
-
-            println(">>>>$aaa")
-
-            val bbb=aaa.getJSONArray("reading")
-
-            println(">>>$bbb")
-
-            val ccc=bbb.getJSONObject(0)
-
-            val imageUnit=ccc.getString("image")
-            val nameUnit=ccc.getString("en")
-
-            println(">>>$nameUnit")
-
-            val imagePath=context.assets.open("data/$aaa/reading/$imageUnit").read()
-
-            println(">>>$imagePath")
-            val imageBytes = Base64.decode(imageUnit, Base64.DEFAULT)
-            val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0,20)
-
-
-
-
-
-
-
-
-
-            return Reading(imagePath,nameUnit)
-            mainBinding.image.setImageBitmap(decodedImage)
-
-        }
+//        jsonProcess.reading(applicationContext,0)
 
 
         val adapter:WordsAdapter= WordsAdapter(this@MainActivity)
 
-        mainBinding.recyclerView.layoutManager=LinearLayoutManager(applicationContext,LinearLayoutManager.VERTICAL,false)
+        mainBinding.recyclerView.layoutManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
 
         mainBinding.recyclerView.adapter=adapter
 
-        adapter.notifyDataSetChanged()
+
+
+//        adapter.notifyDataSetChanged()
 
     }
 }

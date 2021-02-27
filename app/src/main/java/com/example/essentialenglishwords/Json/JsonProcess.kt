@@ -1,11 +1,11 @@
 package com.example.essentialenglishwords.Json
 
 import android.content.Context
-import org.json.JSONArray
+import android.graphics.drawable.Drawable
 import org.json.JSONObject
 
 data class Reading(
-    val image:Int,
+    val image:Drawable,
     val name:String
 )
 
@@ -19,42 +19,44 @@ class JsonProcess {
 
     }
 
-//    fun reading(context: Context,index:Int):Reading{
-//
-//        val json=context.assets.open("data/data.json").bufferedReader().readText()
-//
-//        println(">>>$json")
-//
-//        val arrayjson=JSONObject(json).getJSONArray("flashcard")
-//
-//        println(">>>$arrayjson")
-//
-//        val aaa=arrayjson.getJSONObject(index)
-//
-//        println(">>>$aaa")
-//
-//        val bbb=aaa.getJSONArray("reading")
-//
-//        println(">>>$bbb")
-//
-//        val ccc=bbb.getJSONObject(0)
-//
-//        val imageUnit=ccc.getString("image")
-//        val nameUnit=ccc.getString("en")
-//
-//        println(">>>$nameUnit")
-//
-//        val imagePath=context.assets.open("data/$aaa/reading/$imageUnit").read()
-//
-//        println(">>>$imagePath")
-//
-//
-//
-//
-//
-//
-//
-//        return Reading(imagePath,nameUnit)
-//
-//    }
+    fun reading(context: Context,index:Int):Reading{
+
+        val json=context.assets.open("data/data.json").bufferedReader().readText()
+
+
+        val arrayjson=JSONObject(json).getJSONArray("flashcard")
+
+
+        val flashcardObject=arrayjson.getJSONObject(0)
+
+        val sizeFlash=arrayjson.length()
+
+        println(">>>$sizeFlash")
+
+
+        val readingArray=flashcardObject.getJSONArray("reading")
+
+        println(">>>$readingArray")
+
+        val readingObject=readingArray.getJSONObject(1)
+
+        val imageUnit=readingObject.getString("image")
+        val nameUnit=readingObject.getString("en")
+
+
+        val imagePath=context.assets.open("data/Unit-$index/reading/$imageUnit")
+        val amg=Drawable.createFromStream(imagePath,null)
+
+
+
+
+
+
+
+
+
+
+        return Reading(amg,nameUnit)
+
+    }
 }

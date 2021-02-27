@@ -22,6 +22,11 @@ class WordsAdapter(val context: Context):RecyclerView.Adapter<WordHolder>() {
 
     override fun onBindViewHolder(holder: WordHolder, position: Int) {
 
+//        holder.textUnit.text = jsonProcess.reading(context,0).name
+
+        println(">>>"+jsonProcess.reading(context,2).name)
+//        holder.pictureUnit.setImageDrawable(jsonProcess.reading(context,position).image)
+
 //        for (index in 0..30){
 //
 //            holder.pictureUnit.setImageResource(jsonProcess.reading(context,index).image.toInt())
@@ -36,6 +41,6 @@ class WordsAdapter(val context: Context):RecyclerView.Adapter<WordHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return listUnit.size
+        return 10
     }
 }

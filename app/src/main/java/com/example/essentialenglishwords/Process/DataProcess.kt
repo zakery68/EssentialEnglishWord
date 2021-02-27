@@ -1,25 +1,33 @@
 package com.example.essentialenglishwords.Process
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import com.example.essentialenglishwords.Json.JsonProcess
-import com.example.essentialenglishwords.Json.Reading
+import com.example.essentialenglishwords.Json.ReadingClass
+import com.example.essentialenglishwords.RecyclerView.WordsAdapter
 
-class DataProcess {
+class DataProcess(context: Context) {
 
-    fun save(context: Context,image:Drawable,name:String){
 
-        val jsonProcess:JsonProcess= JsonProcess()
 
-        val listUnit:ArrayList<Reading> =ArrayList<Reading>()
-        for (index in 0..30){
 
-        jsonProcess.reading(context,index)
+    fun save(context: Context, adapter: WordsAdapter):ArrayList<ReadingClass> {
+
+        adapter.listUnit
+        val jsonProcess: JsonProcess = JsonProcess()
+
+        for (index in 0..29) {
+
+            adapter.listUnit.add(
+                ReadingClass(
+                    jsonProcess.reading(context, index).image,
+                    jsonProcess.reading(context, index).name
+                )
+            )
 
 
         }
 
-
+        return adapter.listUnit
 
     }
 }

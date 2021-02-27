@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import org.json.JSONObject
 
-data class Reading(
+data class ReadingClass(
     val image:Drawable,
     val name:String
 )
@@ -19,7 +19,7 @@ class JsonProcess {
 
     }
 
-    fun reading(context: Context,index:Int):Reading{
+    fun reading(context: Context,index:Int):ReadingClass{
 
         val json=context.assets.open("data/data.json").bufferedReader().readText()
 
@@ -27,7 +27,7 @@ class JsonProcess {
         val arrayjson=JSONObject(json).getJSONArray("flashcard")
 
 
-        val flashcardObject=arrayjson.getJSONObject(0)
+        val flashcardObject=arrayjson.getJSONObject(index)
 
         val sizeFlash=arrayjson.length()
 
@@ -44,7 +44,7 @@ class JsonProcess {
         val nameUnit=readingObject.getString("en")
 
 
-        val imagePath=context.assets.open("data/Unit-$index/reading/$imageUnit")
+        val imagePath=context.assets.open("data/Unit-${index.plus(1)}/reading/$imageUnit")
         val amg=Drawable.createFromStream(imagePath,null)
 
 
@@ -56,7 +56,7 @@ class JsonProcess {
 
 
 
-        return Reading(amg,nameUnit)
+        return ReadingClass(amg,nameUnit)
 
     }
 }

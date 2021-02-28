@@ -1,4 +1,4 @@
-package com.example.essentialenglishwords.RecyclerView
+package com.example.essentialenglishwords.RecyclerView.Holder
 
 import android.view.View
 import android.widget.ImageView
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.word_holder.view.*
 import java.security.cert.Extension
 
-class WordHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val pictureUnit: ImageView = itemView.pictureUnit
 

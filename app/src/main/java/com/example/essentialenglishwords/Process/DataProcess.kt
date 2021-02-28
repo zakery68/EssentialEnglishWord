@@ -3,14 +3,11 @@ package com.example.essentialenglishwords.Process
 import android.content.Context
 import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.Json.ReadingClass
-import com.example.essentialenglishwords.RecyclerView.WordsAdapter
+import com.example.essentialenglishwords.RecyclerView.Adapter.UnitAdapter
 
 class DataProcess(context: Context) {
 
-
-
-
-    fun save(context: Context, adapter: WordsAdapter):ArrayList<ReadingClass> {
+    fun save(context: Context, adapter: UnitAdapter):ArrayList<ReadingClass> {
 
         adapter.listUnit
         val jsonProcess: JsonProcess = JsonProcess()

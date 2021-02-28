@@ -48,14 +48,6 @@ class JsonProcess {
         val amg=Drawable.createFromStream(imagePath,null)
 
 
-
-
-
-
-
-
-
-
         return ReadingClass(amg,nameUnit)
 
     }

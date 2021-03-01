@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.word_holder.view.*
-import java.security.cert.Extension
 
 class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -16,5 +15,5 @@ class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val textUnit: TextView = itemView.textUnit
 
-    val itemView:ConstraintLayout=itemView.itemView
+    val rootItem: ConstraintLayout = itemView.rootViewItem
 }

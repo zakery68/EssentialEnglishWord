@@ -1,13 +1,9 @@
 package com.example.essentialenglishwords
 
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.graphics.drawable.Drawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.essentialenglishwords.databinding.LayoutLoginBinding
-import org.json.JSONObject
-import java.io.InputStream
 
 class LoginActivity : AppCompatActivity() {
 

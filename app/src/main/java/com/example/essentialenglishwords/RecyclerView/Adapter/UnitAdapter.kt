@@ -4,13 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.Json.ReadingClass
 import com.example.essentialenglishwords.R
 import com.example.essentialenglishwords.RecyclerView.Holder.UnitHolder
-
-val jsonProcess: JsonProcess = JsonProcess()
-
 
 class UnitAdapter(val context: Context):RecyclerView.Adapter<UnitHolder>() {
 
@@ -25,6 +21,9 @@ class UnitAdapter(val context: Context):RecyclerView.Adapter<UnitHolder>() {
         holder.textUnit.text = listUnit[position].name
         holder.pictureUnit.setImageDrawable(listUnit[position].image)
 
+        holder.rootItem.setOnClickListener {
+
+        }
 
     }
 

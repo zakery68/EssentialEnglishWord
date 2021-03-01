@@ -13,7 +13,7 @@ class UnitAdapter(val context: Context):RecyclerView.Adapter<UnitHolder>() {
     val listUnit:ArrayList<ReadingClass> = ArrayList<ReadingClass>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UnitHolder {
-        return UnitHolder(LayoutInflater.from(context).inflate(R.layout.word_holder,parent,false))
+        return UnitHolder(LayoutInflater.from(context).inflate(R.layout.unit_holder,parent,false))
     }
 
     override fun onBindViewHolder(holder: UnitHolder, position: Int) {

@@ -1,11 +1,10 @@
 package com.example.essentialenglishwords.RecyclerView.Adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.essentialenglishwords.Json.ReadingClass
+import com.example.essentialenglishwords.DataClass.ReadingClass
 import com.example.essentialenglishwords.R
 import com.example.essentialenglishwords.RecyclerView.Holder.UnitHolder
 

@@ -2,12 +2,10 @@ package com.example.essentialenglishwords.Json
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import com.example.essentialenglishwords.DataClass.ReadingClass
 import org.json.JSONObject
 
-data class ReadingClass(
-    val image:Drawable,
-    val name:String
-)
+
 
 class JsonProcess {
 
@@ -19,7 +17,7 @@ class JsonProcess {
 
     }
 
-    fun reading(context: Context,index:Int):ReadingClass{
+    fun reading(context: Context,index:Int): ReadingClass {
 
         val json=context.assets.open("data/data.json").bufferedReader().readText()
 

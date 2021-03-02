@@ -16,5 +16,5 @@ class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val textUnit: TextView = itemView.textUnit
 
-    val rootItem: ConstraintLayout = itemView.rootViewItem
+    val rootItem: ConstraintLayout = itemView.rootItemView
 }

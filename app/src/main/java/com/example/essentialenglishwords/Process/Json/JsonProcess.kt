@@ -3,6 +3,7 @@ package com.example.essentialenglishwords.Json
 import android.content.Context
 import android.graphics.drawable.Drawable
 import com.example.essentialenglishwords.DataClass.ReadingClass
+import com.example.essentialenglishwords.DataClass.WordsClass
 import org.json.JSONObject
 
 
@@ -10,7 +11,7 @@ import org.json.JSONObject
 
 class JsonProcess {
 
-    fun wordList(context: Context,index: Int){
+    fun wordList(context: Context,index: Int):WordsClass{
         val json=context.assets.open("data/data.json").bufferedReader().readText()
 
         val arrayJson=JSONObject(json).getJSONArray("flashcard")
@@ -23,9 +24,23 @@ class JsonProcess {
 
         println(">>>>$wordObject")
 
+        val image=wordObject.getString("image")
+        val word=wordObject.getString("en")
+        val pron=wordObject.getString("pron")
+        val describe=wordObject.getString("desc")
+        val example=wordObject.getString("exam")
+
+        val imagePath=context.assets.open("data/Unit-${index.plus(1)}/wordlist/$image")
+        val img=Drawable.createFromStream(imagePath,null)
 
 
 
+
+
+
+
+
+        return WordsClass(img,word,pron,describe,example)
 
     }
 

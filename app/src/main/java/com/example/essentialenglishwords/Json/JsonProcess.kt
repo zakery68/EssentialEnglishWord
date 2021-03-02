@@ -9,9 +9,25 @@ data class ReadingClass(
     val name:String
 )
 
+
 class JsonProcess {
 
-    fun wordlist(){
+    fun wordList(context: Context,index: Int){
+        val json=context.assets.open("data/data.json").bufferedReader().readText()
+
+        val arrayJson=JSONObject(json).getJSONArray("flashcard")
+
+        val flashCardObject=arrayJson.getJSONObject(0)
+
+        val wordArray=flashCardObject.getJSONArray("wordlist")
+
+        val wordObject=wordArray.getJSONObject(index)
+
+        println(">>>>$wordObject")
+
+
+
+
 
     }
 

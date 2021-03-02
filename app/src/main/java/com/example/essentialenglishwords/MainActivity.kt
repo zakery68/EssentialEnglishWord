@@ -15,12 +15,17 @@ class MainActivity : AppCompatActivity(),TransferData {
 
     val dataProcess:DataProcess=DataProcess(this@MainActivity)
     val adapter: UnitAdapter = UnitAdapter(this@MainActivity,this@MainActivity)
+    val jsonProcess:JsonProcess=JsonProcess()
 
     lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
+
+        jsonProcess.wordList(this@MainActivity,1)
+
+
 
 
 

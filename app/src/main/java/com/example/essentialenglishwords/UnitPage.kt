@@ -1,5 +1,6 @@
 package com.example.essentialenglishwords
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import com.example.essentialenglishwords.Json.JsonProcess
@@ -21,6 +22,25 @@ class UnitPage : AppCompatActivity() {
         jsonProcess.reading(this@UnitPage,positionUnit)
 
         unitPageBinding.imageUnit.setImageDrawable(jsonProcess.reading(this@UnitPage,positionUnit).image)
+
+        unitPageBinding.buttonWords.setOnClickListener {
+
+        val intent=Intent(this@UnitPage,WordActivity::class.java)
+        intent.putExtra("key",positionUnit)
+            startActivity(intent)
+        }
+
+        unitPageBinding.buttonStory.setOnClickListener {
+            val intent=Intent(this@UnitPage,WordActivity::class.java)
+            intent.putExtra("key",positionUnit)
+            startActivity(intent)
+        }
+
+        unitPageBinding.buttonExercise.setOnClickListener {
+            val intent=Intent(this@UnitPage,WordActivity::class.java)
+            intent.putExtra("key",positionUnit)
+            startActivity(intent)
+        }
 
 
 

@@ -11,7 +11,6 @@ import com.example.essentialenglishwords.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val jsonProcess: JsonProcess = JsonProcess()
     val dataProcess:DataProcess=DataProcess(this@MainActivity)
     val adapter: UnitAdapter = UnitAdapter(this@MainActivity)
 

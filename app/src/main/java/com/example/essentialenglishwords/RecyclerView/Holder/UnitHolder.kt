@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.unit_holder.view.*
 import kotlinx.android.synthetic.main.word_holder.view.*
 
 class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

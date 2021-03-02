@@ -30,7 +30,7 @@ class JsonProcess {
         val describe=wordObject.getString("desc")
         val example=wordObject.getString("exam")
 
-        val imagePath=context.assets.open("data/Unit-${index.plus(1)}/wordlist/$image")
+        val imagePath=context.assets.open("data/Unit-${0.plus(1)}/wordlist/$image")
         val img=Drawable.createFromStream(imagePath,null)
 
 

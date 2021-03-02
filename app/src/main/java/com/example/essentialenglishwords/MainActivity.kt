@@ -25,12 +25,7 @@ class MainActivity : AppCompatActivity(),TransferData {
 
         jsonProcess.wordList(this@MainActivity,1)
 
-
-
-
-
-
-        dataProcess.save(this,adapter)
+        dataProcess.fillUnit(this,adapter)
 
         mainBinding.recyclerView.layoutManager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
 

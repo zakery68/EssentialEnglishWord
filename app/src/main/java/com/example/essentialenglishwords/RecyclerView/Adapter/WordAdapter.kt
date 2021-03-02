@@ -26,6 +26,15 @@ class WordAdapter(val context: Context) : RecyclerView.Adapter<WordHolder>() {
 
     override fun onBindViewHolder(holder: WordHolder, position: Int) {
 
+        holder.imageWordItem.setImageDrawable(listWords[position].image)
+
+        holder.textWordItem.text =listWords[position].word
+
+        holder.textPronItem.text = listWords[position].pron
+
+        holder.textDescribeItem.text = listWords[position].describe
+        
+        holder.textExampleItem.text = listWords[position].example
     }
 
     override fun getItemCount(): Int {

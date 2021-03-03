@@ -23,16 +23,19 @@ class WordActivity : AppCompatActivity() {
 
         val intent = intent.getIntExtra("key",0)
 
-        jsonProcess.wordList(this@WordActivity,intent)
+        val allListWords=jsonProcess.wordList(this@WordActivity,intent)
 
-        dataProcess.fillWords(this@WordActivity,wordAdapter)
         wordBinding.recyclerViewWords.layoutManager = LinearLayoutManager(
             this@WordActivity,
             LinearLayoutManager.VERTICAL,
             false
         )
 
+        wordAdapter.listWords.addAll(allListWords)
+
         wordBinding.recyclerViewWords.adapter = wordAdapter
 
     }
-}
+
+
+    }

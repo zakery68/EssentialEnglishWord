@@ -8,6 +8,7 @@ import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.Process.DataProcess
 import com.example.essentialenglishwords.RecyclerView.Adapter.TransferData
 import com.example.essentialenglishwords.RecyclerView.Adapter.UnitAdapter
+import com.example.essentialenglishwords.RecyclerView.Adapter.WordAdapter
 import com.example.essentialenglishwords.databinding.ActivityMainBinding
 
 
@@ -23,7 +24,9 @@ class MainActivity : AppCompatActivity(),TransferData {
         mainBinding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        jsonProcess.wordList(this@MainActivity,1)
+
+
+//        jsonProcess.wordList(this@MainActivity,1)
 
         dataProcess.fillUnit(this,adapter)
 

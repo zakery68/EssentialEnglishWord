@@ -7,77 +7,74 @@ import com.example.essentialenglishwords.DataClass.WordsClass
 import org.json.JSONObject
 
 
-
-
 class JsonProcess {
 
-    fun wordList(context: Context,index: Int):WordsClass{
-        val json=context.assets.open("data/data.json").bufferedReader().readText()
 
-        val arrayJson=JSONObject(json).getJSONArray("flashcard")
+    fun wordList(context: Context, positionUnit: Int): ArrayList<WordsClass> {
 
-        val flashCardObject=arrayJson.getJSONObject(0)
+        val json = context.assets.open("data/data.json").bufferedReader().readText()
 
-        val wordArray=flashCardObject.getJSONArray("wordlist")
+        val arrayJson = JSONObject(json).getJSONArray("flashcard")
 
-        val wordObject=wordArray.getJSONObject(index)
+        val flashCardObject = arrayJson.getJSONObject(positionUnit)
 
-        println(">>>>$wordObject")
+        val wordArray = flashCardObject.getJSONArray("wordlist")
 
-        val image=wordObject.getString("image")
-        val word=wordObject.getString("en")
-        val pron=wordObject.getString("pron")
-        val describe=wordObject.getString("desc")
-        val example=wordObject.getString("exam")
+        val allListWords: ArrayList<WordsClass> = ArrayList<WordsClass>()
 
-        val imagePath=context.assets.open("data/Unit-${0.plus(1)}/wordlist/$image")
-        val img=Drawable.createFromStream(imagePath,null)
+        for (index in 0..19) {
+            val wordObject = wordArray.getJSONObject(index)
+            val image = wordObject.getString("image")
+            val word = wordObject.getString("en")
+            val pron = wordObject.getString("pron")
+            val describe = wordObject.getString("desc")
+            val example = wordObject.getString("exam")
 
-
-
-
-
-
+            val imagePath = context.assets.open("data/Unit-${positionUnit.plus(1)}/wordlist/$image")
+            val img = Drawable.createFromStream(imagePath, null)
+            allListWords.add(WordsClass(img, word, pron, describe, example))
+        }
 
 
-        return WordsClass(img,word,pron,describe,example)
 
-    }
-
-    fun exercise(){
+        return allListWords
 
     }
 
-    fun reading(context: Context,index:Int): ReadingClass {
+    fun exercise() {
 
-        val json=context.assets.open("data/data.json").bufferedReader().readText()
+    }
+
+    fun reading(context: Context, index: Int): ReadingClass {
+
+        val json = context.assets.open("data/data.json").bufferedReader().readText()
 
 
-        val arrayjson=JSONObject(json).getJSONArray("flashcard")
+        val arrayjson = JSONObject(json).getJSONArray("flashcard")
 
 
-        val flashcardObject=arrayjson.getJSONObject(index)
+        val flashcardObject = arrayjson.getJSONObject(index)
 
-        val sizeFlash=arrayjson.length()
+        val sizeFlash = arrayjson.length()
 
         println(">>>$sizeFlash")
 
 
-        val readingArray=flashcardObject.getJSONArray("reading")
+        val readingArray = flashcardObject.getJSONArray("reading")
 
         println(">>>$readingArray")
 
-        val readingObject=readingArray.getJSONObject(0)
+        val readingObject = readingArray.getJSONObject(0)
 
-        val imageUnit=readingObject.getString("image")
-        val nameUnit=readingObject.getString("en")
-
-
-        val imagePath=context.assets.open("data/Unit-${index.plus(1)}/reading/$imageUnit")
-        val amg=Drawable.createFromStream(imagePath,null)
+        val imageUnit = readingObject.getString("image")
+        val nameUnit = readingObject.getString("en")
 
 
-        return ReadingClass(amg,nameUnit)
+        val imagePath = context.assets.open("data/Unit-${index.plus(1)}/reading/$imageUnit")
+        val amg = Drawable.createFromStream(imagePath, null)
+
+
+        return ReadingClass(amg, nameUnit)
 
     }
 }

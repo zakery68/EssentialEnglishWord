@@ -15,3 +15,9 @@ data class WordsClass(
     val describe: String,
     val example: String
 )
+
+data class StoryClass(
+    val imageStory: Drawable,
+    val titleStory: String,
+    val messageStory:String
+)

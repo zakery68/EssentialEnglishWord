@@ -1,6 +1,7 @@
 package com.example.essentialenglishwords.RecyclerView.Adapter
 
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -32,9 +33,9 @@ class WordAdapter(val context: Context) : RecyclerView.Adapter<WordHolder>() {
 
         holder.textPronItem.text = listWords[position].pron
 
-        holder.textDescribeItem.text = listWords[position].describe
+        holder.textDescribeItem.text = Html.fromHtml(listWords[position].describe,Html.FROM_HTML_MODE_COMPACT)
         
-        holder.textExampleItem.text = listWords[position].example
+        holder.textExampleItem.text = Html.fromHtml(listWords[position].example,Html.FROM_HTML_MODE_COMPACT)
     }
 
     override fun getItemCount(): Int {

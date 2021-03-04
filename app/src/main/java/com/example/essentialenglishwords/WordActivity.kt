@@ -10,10 +10,9 @@ import com.example.essentialenglishwords.databinding.ActivityWordBinding
 
 class WordActivity : AppCompatActivity() {
 
-    val wordAdapter = WordAdapter(this)
-    val dataProcess: DataProcess = DataProcess(this@WordActivity)
-    val jsonProcess:JsonProcess=JsonProcess()
-
+    private val wordAdapter = WordAdapter(this)
+    private val dataProcess: DataProcess = DataProcess()
+    private val jsonProcess:JsonProcess=JsonProcess()
 
     lateinit var wordBinding: ActivityWordBinding
     override fun onCreate(savedInstanceState: Bundle?) {

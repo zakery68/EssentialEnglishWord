@@ -14,9 +14,8 @@ import com.example.essentialenglishwords.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),TransferData {
 
-    val dataProcess:DataProcess=DataProcess(this@MainActivity)
-    val adapter: UnitAdapter = UnitAdapter(this@MainActivity,this@MainActivity)
-    val jsonProcess:JsonProcess=JsonProcess()
+    private val dataProcess:DataProcess=DataProcess()
+    private val adapter: UnitAdapter = UnitAdapter(this@MainActivity,this@MainActivity)
 
     lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

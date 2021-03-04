@@ -3,12 +3,12 @@ package com.example.essentialenglishwords.Json
 import android.content.Context
 import android.graphics.drawable.Drawable
 import com.example.essentialenglishwords.DataClass.ReadingClass
+import com.example.essentialenglishwords.DataClass.StoryClass
 import com.example.essentialenglishwords.DataClass.WordsClass
 import org.json.JSONObject
 
 
 class JsonProcess {
-
 
     fun wordList(context: Context, positionUnit: Int): ArrayList<WordsClass> {
 
@@ -32,16 +32,11 @@ class JsonProcess {
 
             val imagePath = context.assets.open("data/Unit-${positionUnit.plus(1)}/wordlist/$image")
             val img = Drawable.createFromStream(imagePath, null)
-            allListWords.add(WordsClass(img, word, pron, describe, example))
+
+            allListWords.add(WordsClass(img,word,pron, describe, example))
+
         }
-
-
-
         return allListWords
-
-    }
-
-    fun exercise() {
 
     }
 
@@ -77,4 +72,30 @@ class JsonProcess {
         return ReadingClass(amg, nameUnit)
 
     }
+
+    fun exercise() {
+
+    }
+
+    fun story(context: Context,positionStory:Int):StoryClass{
+
+        val json = context.assets.open("data/data.json").bufferedReader().readText()
+
+        val objectUnit = JSONObject(json).getJSONArray("flashcard").getJSONObject(positionStory)
+
+        val objectStory = objectUnit.getJSONArray("reading").getJSONObject(0)
+
+        val titleStory = objectStory.getString("en")
+
+        val messageStory = objectStory.getString("story")
+
+        val imageStory = objectStory.getString("image")
+
+        val imagePath = context.assets.open("data/Unit-${positionStory.plus(1)}/reading/$imageStory")
+
+        val img = Drawable.createFromStream(imagePath, null)
+
+        return StoryClass(img,titleStory,messageStory)
+    }
+
 }

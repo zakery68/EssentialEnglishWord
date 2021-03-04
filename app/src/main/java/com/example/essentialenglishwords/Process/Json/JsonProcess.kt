@@ -73,7 +73,15 @@ class JsonProcess {
 
     }
 
-    fun exercise() {
+    fun exercise(context: Context,positionStory:Int) {
+
+        val json = context.assets.open("data/data.json").bufferedReader().readText()
+
+        val objectUnit = JSONObject(json).getJSONArray("flashcard").getJSONObject(positionStory)
+
+        val object
+
+
 
     }
 

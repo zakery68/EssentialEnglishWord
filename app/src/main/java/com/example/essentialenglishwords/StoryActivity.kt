@@ -15,7 +15,6 @@ class StoryActivity : AppCompatActivity() {
         storyBinding = ActivityStoryBinding.inflate(layoutInflater)
         setContentView(storyBinding.root)
 
-
         val intent = intent.getIntExtra("key",0)
 
 

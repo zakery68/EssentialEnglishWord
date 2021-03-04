@@ -79,8 +79,17 @@ class JsonProcess {
 
         val objectUnit = JSONObject(json).getJSONArray("flashcard").getJSONObject(positionStory)
 
-        val object
+        val objectExercise1 = objectUnit.getJSONArray("exercise").getJSONObject(0)
+        val titleExercise1 = objectExercise1.getString("en")
+        val exercise1 = objectExercise1.getString("story")
 
+        val objectExercise2 = objectUnit.getJSONArray("exercise").getJSONObject(1)
+        val titleExercise2 = objectExercise1.getString("en")
+        val exercise2 = objectExercise1.getString("story")
+
+        val objectAnswerExercise = objectUnit.getJSONArray("exercise").getJSONObject(2)
+        val titleAnswer = objectExercise1.getString("en")
+        val answer = objectExercise1.getString("story")
 
 
     }

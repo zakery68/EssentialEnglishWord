@@ -9,40 +9,42 @@ import com.example.essentialenglishwords.databinding.ActivityUnitPageBinding
 
 class UnitPage : AppCompatActivity() {
 
-    val jsonProcess:JsonProcess= JsonProcess()
+    val jsonProcess: JsonProcess = JsonProcess()
 
     lateinit var unitPageBinding: ActivityUnitPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        unitPageBinding= ActivityUnitPageBinding.inflate(layoutInflater)
+        unitPageBinding = ActivityUnitPageBinding.inflate(layoutInflater)
         setContentView(unitPageBinding.root)
 
-        val positionUnit=intent.getIntExtra("key",0)
+        val positionUnit = intent.getIntExtra("key", 0)
 
-        jsonProcess.reading(this@UnitPage,positionUnit)
+        jsonProcess.reading(this@UnitPage, positionUnit)
 
-        unitPageBinding.imageUnit.setImageDrawable(jsonProcess.reading(this@UnitPage,positionUnit).image)
+        unitPageBinding.imageUnit.setImageDrawable(
+            jsonProcess.reading(
+                this@UnitPage,
+                positionUnit
+            ).image
+        )
 
         unitPageBinding.buttonWords.setOnClickListener {
-
-        val intent=Intent(this@UnitPage,WordActivity::class.java)
-        intent.putExtra("key",positionUnit)
+            val intent = Intent(this@UnitPage, WordActivity::class.java)
+            intent.putExtra("key", positionUnit)
             startActivity(intent)
         }
 
         unitPageBinding.buttonStory.setOnClickListener {
-            val intent=Intent(this@UnitPage,WordActivity::class.java)
-            intent.putExtra("key",positionUnit)
+            val intent = Intent(this@UnitPage, WordActivity::class.java)
+            intent.putExtra("key", positionUnit)
             startActivity(intent)
         }
 
         unitPageBinding.buttonExercise.setOnClickListener {
-            val intent=Intent(this@UnitPage,WordActivity::class.java)
-            intent.putExtra("key",positionUnit)
+            val intent = Intent(this@UnitPage, WordActivity::class.java)
+            intent.putExtra("key", positionUnit)
             startActivity(intent)
         }
-
-
 
 
     }

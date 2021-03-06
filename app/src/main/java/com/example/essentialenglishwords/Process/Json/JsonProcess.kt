@@ -2,6 +2,7 @@ package com.example.essentialenglishwords.Json
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import com.example.essentialenglishwords.DataClass.ExerciseClass
 import com.example.essentialenglishwords.DataClass.ReadingClass
 import com.example.essentialenglishwords.DataClass.StoryClass
 import com.example.essentialenglishwords.DataClass.WordsClass
@@ -33,7 +34,7 @@ class JsonProcess {
             val imagePath = context.assets.open("data/Unit-${positionUnit.plus(1)}/wordlist/$image")
             val img = Drawable.createFromStream(imagePath, null)
 
-            allListWords.add(WordsClass(img,word,pron, describe, example))
+            allListWords.add(WordsClass(img, word, pron, describe, example))
 
         }
         return allListWords
@@ -73,7 +74,7 @@ class JsonProcess {
 
     }
 
-    fun exercise(context: Context,positionStory:Int) {
+    fun exercise(context: Context, positionStory: Int): ExerciseClass {
 
         val json = context.assets.open("data/data.json").bufferedReader().readText()
 
@@ -91,10 +92,16 @@ class JsonProcess {
         val titleAnswer = objectExercise1.getString("en")
         val answer = objectExercise1.getString("story")
 
+        return ExerciseClass(
+            titleExercise1,
+            exercise1,
+            titleExercise2,
+            exercise2,titleAnswer,answer
+        )
 
     }
 
-    fun story(context: Context,positionStory:Int):StoryClass{
+    fun story(context: Context, positionStory: Int): StoryClass {
 
         val json = context.assets.open("data/data.json").bufferedReader().readText()
 
@@ -108,11 +115,12 @@ class JsonProcess {
 
         val imageStory = objectStory.getString("image")
 
-        val imagePath = context.assets.open("data/Unit-${positionStory.plus(1)}/reading/$imageStory")
+        val imagePath =
+            context.assets.open("data/Unit-${positionStory.plus(1)}/reading/$imageStory")
 
         val img = Drawable.createFromStream(imagePath, null)
 
-        return StoryClass(img,titleStory,messageStory)
+        return StoryClass(img, titleStory, messageStory)
     }
 
 }

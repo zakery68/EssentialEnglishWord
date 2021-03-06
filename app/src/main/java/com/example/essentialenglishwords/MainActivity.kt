@@ -8,7 +8,6 @@ import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.Process.DataProcess
 import com.example.essentialenglishwords.RecyclerView.Adapter.TransferData
 import com.example.essentialenglishwords.RecyclerView.Adapter.UnitAdapter
-import com.example.essentialenglishwords.RecyclerView.Adapter.WordAdapter
 import com.example.essentialenglishwords.databinding.ActivityMainBinding
 
 

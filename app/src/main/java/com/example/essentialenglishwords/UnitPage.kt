@@ -35,7 +35,7 @@ class UnitPage : AppCompatActivity() {
         }
 
         unitPageBinding.buttonStory.setOnClickListener {
-            val intent = Intent(this@UnitPage, WordActivity::class.java)
+            val intent = Intent(this@UnitPage, StoryActivity::class.java)
             intent.putExtra("key", positionUnit)
             startActivity(intent)
         }

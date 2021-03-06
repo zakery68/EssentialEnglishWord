@@ -21,3 +21,13 @@ data class StoryClass(
     val titleStory: String,
     val messageStory:String
 )
+
+data class ExerciseClass(
+    val title1:String,
+    val exercise1:String,
+    val title2:String,
+    val exercise2:String,
+    val title3:String,
+    val answer:String,
+
+)

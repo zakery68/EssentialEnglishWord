@@ -41,7 +41,7 @@ class UnitPage : AppCompatActivity() {
         }
 
         unitPageBinding.buttonExercise.setOnClickListener {
-            val intent = Intent(this@UnitPage, WordActivity::class.java)
+            val intent = Intent(this@UnitPage, ExerciseActivity::class.java)
             intent.putExtra("key", positionUnit)
             startActivity(intent)
         }

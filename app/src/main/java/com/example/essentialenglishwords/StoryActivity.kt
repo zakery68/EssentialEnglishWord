@@ -26,6 +26,5 @@ class StoryActivity : AppCompatActivity() {
 
 
 
-
     }
 }

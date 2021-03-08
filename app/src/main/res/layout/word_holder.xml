@@ -60,6 +60,7 @@
         app:layout_constraintBottom_toBottomOf="@id/textPron"
         app:layout_constraintLeft_toRightOf="@id/textPron"/>
 
+
     <TextView
         android:id="@+id/textDescribe"
         android:layout_width="0dp"

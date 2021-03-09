@@ -1,18 +1,21 @@
 package com.example.essentialenglishwords
 
+import android.content.res.AssetFileDescriptor
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essentialenglishwords.Json.JsonProcess
-import com.example.essentialenglishwords.Process.DataProcess
+import com.example.essentialenglishwords.RecyclerView.Adapter.TransferDataWord
 import com.example.essentialenglishwords.RecyclerView.Adapter.WordAdapter
 import com.example.essentialenglishwords.databinding.ActivityWordBinding
 
-class WordActivity : AppCompatActivity() {
+class WordActivity : AppCompatActivity(), TransferDataWord {
 
-    private val wordAdapter = WordAdapter(this)
-    private val dataProcess: DataProcess = DataProcess()
-    private val jsonProcess:JsonProcess=JsonProcess()
+    private val wordAdapter = WordAdapter(this, this)
+    private val jsonProcess: JsonProcess = JsonProcess()
+    private var positionUnit: Int = 0
+    var media: MediaPlayer = MediaPlayer()
 
     lateinit var wordBinding: ActivityWordBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +23,9 @@ class WordActivity : AppCompatActivity() {
         wordBinding = ActivityWordBinding.inflate(layoutInflater)
         setContentView(wordBinding.root)
 
-        val intent = intent.getIntExtra("key",0)
+        positionUnit = intent.getIntExtra("key", 0)
 
-        val allListWords=jsonProcess.wordList(this@WordActivity,intent)
+        val allListWords = jsonProcess.wordList(this@WordActivity, positionUnit)
 
         wordBinding.recyclerViewWords.layoutManager = LinearLayoutManager(
             this@WordActivity,
@@ -36,5 +39,37 @@ class WordActivity : AppCompatActivity() {
 
     }
 
+    override fun notifyDataForTransferWord(position: Int) {
 
+        val wordList = jsonProcess.wordList(this@WordActivity, positionUnit)
+        val path = assets.openFd(
+            "data/Unit-${positionUnit.plus(1)}/wordlist/${wordList[position].sound}"
+        )
+
+        wordBinding.textWordView.text = wordList[position].word
+
+        playOrPause(path)
+
+        wordBinding.iconStartPause.setOnClickListener {
+
+            playOrPause(path)
+
+        }
     }
+
+    private fun playOrPause(path: AssetFileDescriptor) {
+        if (!media.isPlaying) {
+            media.setDataSource(path.fileDescriptor, path.startOffset, path.length)
+            media.prepare()
+            media.start()
+            wordBinding.iconStartPause.setImageResource(R.drawable.pause)
+
+        } else {
+            media.reset()
+            media.pause()
+            wordBinding.iconStartPause.setImageResource(R.drawable.play)
+        }
+    }
+
+
+}

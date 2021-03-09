@@ -8,11 +8,11 @@ import com.example.essentialenglishwords.DataClass.ReadingClass
 import com.example.essentialenglishwords.R
 import com.example.essentialenglishwords.RecyclerView.Holder.UnitHolder
 
-interface TransferData{
-    fun notifyDataForTransfer(position: Int)
+interface TransferDataUnit{
+    fun notifyDataForTransferUnit(position: Int)
 }
 
-class UnitAdapter(val context: Context,val transferData: TransferData):RecyclerView.Adapter<UnitHolder>() {
+class UnitAdapter(val context: Context,val transferDataUnit: TransferDataUnit):RecyclerView.Adapter<UnitHolder>() {
 
     val listUnit:ArrayList<ReadingClass> = ArrayList<ReadingClass>()
 
@@ -27,7 +27,7 @@ class UnitAdapter(val context: Context,val transferData: TransferData):RecyclerV
 
         holder.rootItem.setOnClickListener {
 
-            transferData.notifyDataForTransfer(position)
+            transferDataUnit.notifyDataForTransferUnit(position)
 
 
         }

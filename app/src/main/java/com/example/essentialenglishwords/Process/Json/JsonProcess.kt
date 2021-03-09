@@ -30,11 +30,12 @@ class JsonProcess {
             val pron = wordObject.getString("pron")
             val describe = wordObject.getString("desc")
             val example = wordObject.getString("exam")
+            val sound = wordObject.getString("sound")
 
             val imagePath = context.assets.open("data/Unit-${positionUnit.plus(1)}/wordlist/$image")
             val img = Drawable.createFromStream(imagePath, null)
 
-            allListWords.add(WordsClass(img, word, pron, describe, example))
+            allListWords.add(WordsClass(img, word, pron, describe, example,sound))
 
         }
         return allListWords

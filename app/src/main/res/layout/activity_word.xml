@@ -11,4 +11,37 @@
         android:id="@+id/recyclerViewWords"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <View
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/iconStartPause"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/pause"
+        android:background="@null"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintBottom_toBottomOf="@id/statusBar"
+        app:layout_constraintLeft_toLeftOf="@id/statusBar"/>
+
+    <TextView
+        android:id="@+id/textWordView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        tools:text="Afraid"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintLeft_toRightOf="@id/iconStartPause"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintBottom_toBottomOf="@id/statusBar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

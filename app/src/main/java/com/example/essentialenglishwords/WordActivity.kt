@@ -71,5 +71,9 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
         }
     }
 
-
+    override fun onPause() {
+        super.onPause()
+        media.stop()
+        media.reset()
+    }
 }

@@ -35,7 +35,7 @@ class JsonProcess {
             val imagePath = context.assets.open("data/Unit-${positionUnit.plus(1)}/wordlist/$image")
             val img = Drawable.createFromStream(imagePath, null)
 
-            allListWords.add(WordsClass(img, word, pron, describe, example,sound))
+            allListWords.add(WordsClass(img, word, pron, describe, example, sound))
 
         }
         return allListWords
@@ -97,7 +97,7 @@ class JsonProcess {
             titleExercise1,
             exercise1,
             titleExercise2,
-            exercise2,titleAnswer,answer
+            exercise2, titleAnswer, answer
         )
 
     }
@@ -116,12 +116,14 @@ class JsonProcess {
 
         val imageStory = objectStory.getString("image")
 
+        val soundStory = objectStory.getString("sound")
+
         val imagePath =
             context.assets.open("data/Unit-${positionStory.plus(1)}/reading/$imageStory")
 
         val img = Drawable.createFromStream(imagePath, null)
 
-        return StoryClass(img, titleStory, messageStory)
+        return StoryClass(img, titleStory, messageStory, soundStory)
     }
 
 }

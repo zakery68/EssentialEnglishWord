@@ -2,10 +2,7 @@ package com.example.essentialenglishwords.Json
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import com.example.essentialenglishwords.DataClass.ExerciseClass
-import com.example.essentialenglishwords.DataClass.ReadingClass
-import com.example.essentialenglishwords.DataClass.StoryClass
-import com.example.essentialenglishwords.DataClass.WordsClass
+import com.example.essentialenglishwords.DataClass.*
 import org.json.JSONObject
 
 
@@ -86,12 +83,12 @@ class JsonProcess {
         val exercise1 = objectExercise1.getString("story")
 
         val objectExercise2 = objectUnit.getJSONArray("exercise").getJSONObject(1)
-        val titleExercise2 = objectExercise1.getString("en")
-        val exercise2 = objectExercise1.getString("story")
+        val titleExercise2 = objectExercise2.getString("en")
+        val exercise2 = objectExercise2.getString("story")
 
         val objectAnswerExercise = objectUnit.getJSONArray("exercise").getJSONObject(2)
-        val titleAnswer = objectExercise1.getString("en")
-        val answer = objectExercise1.getString("story")
+        val titleAnswer = objectAnswerExercise.getString("en")
+        val answer = objectAnswerExercise.getString("story")
 
         return ExerciseClass(
             titleExercise1,
@@ -101,6 +98,8 @@ class JsonProcess {
         )
 
     }
+
+
 
     fun story(context: Context, positionStory: Int): StoryClass {
 

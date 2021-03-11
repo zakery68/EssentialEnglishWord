@@ -34,3 +34,6 @@ data class ExerciseClass(
     val answer: String,
 
     )
+data class answerClass(
+    val answer:String
+)

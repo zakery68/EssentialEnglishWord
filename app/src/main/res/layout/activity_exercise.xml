@@ -4,13 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExerciseActivity">
+    android:background="@color/white"
+    tools:context=".ExerciseActivity"
+    android:padding="5dp">
 
 
 
-    <WebView
-        android:id="@+id/textExercise"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+       <WebView
+           android:id="@+id/textExercise"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toTopOf="parent"
+           />
+
+       <TextView
+           android:id="@+id/labelAnswer"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Answer"
+           android:gravity="center_horizontal"
+           android:textSize="25sp"
+           android:textColor="@color/white"
+           android:background="#00B3B3"
+           app:layout_constraintTop_toBottomOf="@id/textExercise"/>
+
+           <WebView
+               android:id="@+id/textAnswer"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+app:layout_constraintTop_toBottomOf="@id/labelAnswer"               />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

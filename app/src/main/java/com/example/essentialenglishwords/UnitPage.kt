@@ -1,6 +1,7 @@
 package com.example.essentialenglishwords
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import com.example.essentialenglishwords.Json.JsonProcess
@@ -16,6 +17,7 @@ class UnitPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         unitPageBinding = ActivityUnitPageBinding.inflate(layoutInflater)
         setContentView(unitPageBinding.root)
+
 
         val positionUnit = intent.getIntExtra("key", 0)
 

@@ -24,6 +24,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/lock"
+        android:visibility="invisible"
 
         app:layout_constraintLeft_toLeftOf="@id/pictureUnit"
         app:layout_constraintTop_toTopOf="@id/pictureUnit"

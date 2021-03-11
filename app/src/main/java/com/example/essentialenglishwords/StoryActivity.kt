@@ -68,8 +68,8 @@ class StoryActivity : AppCompatActivity() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onPause() {
+        super.onPause()
         media.stop()
         media.reset()
     }

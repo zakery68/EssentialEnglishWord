@@ -66,7 +66,7 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
 
         } else {
             media.reset()
-            media.pause()
+            media.start()
             wordBinding.iconStartPause.setImageResource(R.drawable.play)
         }
     }

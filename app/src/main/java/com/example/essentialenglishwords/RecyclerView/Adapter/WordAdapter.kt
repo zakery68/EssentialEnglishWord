@@ -20,8 +20,6 @@ class WordAdapter(val context: Context, val transferDataWord: TransferDataWord) 
 
     val listWords: ArrayList<WordsClass> = ArrayList<WordsClass>()
 
-    var media: MediaPlayer = MediaPlayer()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordHolder {
 
         return WordHolder(

@@ -4,6 +4,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.view.View
 import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.databinding.ActivityStoryBinding
 
@@ -40,10 +41,12 @@ class StoryActivity : AppCompatActivity() {
 
         storyBinding.speaker.setOnClickListener {
 
+            media.reset()
             if (!media.isPlaying) {
                 media.setDataSource(path.fileDescriptor, path.startOffset, path.length)
                 media.prepare()
                 media.start()
+                storyBinding.iconStartPause.visibility = View.VISIBLE
                 storyBinding.iconStartPause.setImageResource(R.drawable.pause)
 
             } else {

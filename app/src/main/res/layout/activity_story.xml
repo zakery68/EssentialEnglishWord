@@ -92,6 +92,7 @@
         android:background="@null"
         android:adjustViewBounds="true"
         android:layout_marginStart="10dp"
+        android:visibility="invisible"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="@id/statusBar"
         app:layout_constraintBottom_toBottomOf="@id/statusBar"

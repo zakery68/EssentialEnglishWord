@@ -4,6 +4,7 @@ import android.content.res.AssetFileDescriptor
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.RecyclerView.Adapter.TransferDataWord
@@ -48,6 +49,7 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
 
         wordBinding.textWordView.text = wordList[position].word
 
+        media.reset()
         playOrPause(path)
 
         wordBinding.iconStartPause.setOnClickListener {
@@ -55,10 +57,12 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
             playOrPause(path)
 
         }
+
     }
 
     private fun playOrPause(path: AssetFileDescriptor) {
         if (!media.isPlaying) {
+            media.reset()
             media.setDataSource(path.fileDescriptor, path.startOffset, path.length)
             media.prepare()
             media.start()
@@ -66,9 +70,9 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
 
         } else {
             media.reset()
-            media.start()
             wordBinding.iconStartPause.setImageResource(R.drawable.play)
         }
+
     }
 
     override fun onPause() {

@@ -1,15 +1,17 @@
 package com.example.essentialenglishwords.RecyclerView.Adapter
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essentialenglishwords.DataClass.ReadingClass
 import com.example.essentialenglishwords.R
 import com.example.essentialenglishwords.RecyclerView.Holder.UnitHolder
 
 interface TransferDataUnit{
-    fun notifyDataForTransferUnit(position: Int)
+    fun notifyDataForTransferUnit(position: Int,imageView: ImageView)
 }
 
 class UnitAdapter(val context: Context,val transferDataUnit: TransferDataUnit):RecyclerView.Adapter<UnitHolder>() {
@@ -27,7 +29,7 @@ class UnitAdapter(val context: Context,val transferDataUnit: TransferDataUnit):R
 
         holder.rootItem.setOnClickListener {
 
-            transferDataUnit.notifyDataForTransferUnit(position)
+            transferDataUnit.notifyDataForTransferUnit(position,holder.pictureUnit)
 
 
         }

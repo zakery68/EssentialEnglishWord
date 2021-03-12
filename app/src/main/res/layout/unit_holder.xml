@@ -16,7 +16,7 @@
         android:src="@drawable/lion"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-
+        android:transitionName="transitionImage"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView

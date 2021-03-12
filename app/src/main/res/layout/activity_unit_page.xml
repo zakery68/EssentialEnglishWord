@@ -23,6 +23,7 @@
         android:layout_height="350dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
+        android:transitionName="transitionImage"
         android:src="@drawable/sample_image"
         />
     </androidx.cardview.widget.CardView>

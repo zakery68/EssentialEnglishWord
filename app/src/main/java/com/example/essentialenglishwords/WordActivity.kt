@@ -2,9 +2,8 @@ package com.example.essentialenglishwords
 
 import android.content.res.AssetFileDescriptor
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essentialenglishwords.Json.JsonProcess
 import com.example.essentialenglishwords.RecyclerView.Adapter.TransferDataWord
@@ -72,7 +71,6 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
             media.reset()
             wordBinding.iconStartPause.setImageResource(R.drawable.play)
         }
-
     }
 
     override fun onPause() {

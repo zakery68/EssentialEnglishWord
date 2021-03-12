@@ -31,7 +31,7 @@ class ExerciseActivity : AppCompatActivity() {
         exerciseBinding.textExercise.settings.displayZoomControls = false
         exerciseBinding.textExercise.settings.useWideViewPort = true
         exerciseBinding.textExercise.settings.loadWithOverviewMode = true
-        exerciseBinding.textExercise.settings.defaultFontSize = 25
+        exerciseBinding.textExercise.settings.defaultFontSize = 40
 
         exerciseBinding.textExercise.setInitialScale(0)
 
@@ -56,7 +56,7 @@ class ExerciseActivity : AppCompatActivity() {
         exerciseBinding.textAnswer.settings.displayZoomControls = false
         exerciseBinding.textAnswer.settings.useWideViewPort = true
         exerciseBinding.textAnswer.settings.loadWithOverviewMode = true
-        exerciseBinding.textAnswer.settings.defaultFontSize = 25
+        exerciseBinding.textAnswer.settings.defaultFontSize = 50
 
         exerciseBinding.textAnswer.setInitialScale(0)
 

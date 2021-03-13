@@ -17,7 +17,7 @@ class Main : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         val videoView = mainBinding.videoView
-        val uri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.logo_sun)
+        val uri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.sun_logo)
         videoView.setVideoURI(uri)
         videoView.requestFocus()
         videoView.start()

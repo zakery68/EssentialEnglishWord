@@ -49,8 +49,6 @@ class MainActivity : AppCompatActivity(), TransferDataUnit {
                 )
                     .toBundle()
             )
-
         }
     }
-
 }

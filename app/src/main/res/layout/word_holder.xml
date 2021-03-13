@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         tools:text="[əˈfreid] adj"
         android:layout_marginStart="5dp"
+        android:textColor="#7E7777"
         android:textSize="17sp"
         app:layout_constraintTop_toTopOf="@id/textWord"
         app:layout_constraintLeft_toRightOf="@id/textWord"

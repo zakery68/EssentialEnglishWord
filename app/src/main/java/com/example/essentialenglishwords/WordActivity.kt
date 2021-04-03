@@ -27,6 +27,8 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
 
         val allListWords = jsonProcess.wordList(this@WordActivity, positionUnit)
 
+        wordBinding.numberPage.text = "Unit ${positionUnit.plus(1)}"
+
         wordBinding.recyclerViewWords.layoutManager = LinearLayoutManager(
             this@WordActivity,
             LinearLayoutManager.VERTICAL,
@@ -37,6 +39,9 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
 
         wordBinding.recyclerViewWords.adapter = wordAdapter
 
+        wordBinding.backPage.setOnClickListener {
+            finish()
+        }
     }
 
     override fun notifyDataForTransferWord(position: Int) {

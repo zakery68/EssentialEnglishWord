@@ -7,12 +7,44 @@
     tools:context=".WordActivity"
     android:background="@color/white">
 
+    <View
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/backPage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back"
+        android:background="@color/white"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/actionBar"
+        app:layout_constraintBottom_toBottomOf="@id/actionBar"
+        app:layout_constraintLeft_toLeftOf="@id/actionBar"/>
+
+    <TextView
+        android:id="@+id/numberPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Unit 1"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@id/actionBar"
+        app:layout_constraintBottom_toBottomOf="@id/actionBar"
+        app:layout_constraintLeft_toRightOf="@id/backPage"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewWords"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/actionBar"
         app:layout_constraintBottom_toTopOf="@id/statusBar"/>
 
     <View

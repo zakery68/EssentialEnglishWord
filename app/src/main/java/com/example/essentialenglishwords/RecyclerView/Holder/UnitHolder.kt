@@ -12,7 +12,7 @@ class UnitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val pictureUnit: ImageView = itemView.pictureUnit
 
-    val lockUnit: ImageView = itemView.lockUnit
+    val pageNumber: TextView = itemView.pageNumber
 
     val textUnit: TextView = itemView.textUnit
 

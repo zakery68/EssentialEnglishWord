@@ -11,6 +11,7 @@ import com.example.essentialenglishwords.databinding.ActivityUnitPageBinding
 class UnitPage : AppCompatActivity() {
 
     val jsonProcess: JsonProcess = JsonProcess()
+    var oneClick = true
 
     lateinit var unitPageBinding: ActivityUnitPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,23 +32,38 @@ class UnitPage : AppCompatActivity() {
         )
 
         unitPageBinding.buttonWords.setOnClickListener {
-            val intent = Intent(this@UnitPage, WordActivity::class.java)
-            intent.putExtra("key", positionUnit)
-            startActivity(intent)
+
+            if (oneClick){
+                oneClick=false
+                val intent = Intent(this@UnitPage, WordActivity::class.java)
+                intent.putExtra("key", positionUnit)
+                startActivity(intent)
+            }
         }
 
         unitPageBinding.buttonStory.setOnClickListener {
-            val intent = Intent(this@UnitPage, StoryActivity::class.java)
-            intent.putExtra("key", positionUnit)
-            startActivity(intent)
+            if (oneClick) {
+                oneClick = false
+                val intent = Intent(this@UnitPage, StoryActivity::class.java)
+                intent.putExtra("key", positionUnit)
+                startActivity(intent)
+            }
         }
 
         unitPageBinding.buttonExercise.setOnClickListener {
-            val intent = Intent(this@UnitPage, ExerciseActivity::class.java)
-            intent.putExtra("key", positionUnit)
-            startActivity(intent)
+            if (oneClick) {
+                oneClick = false
+                val intent = Intent(this@UnitPage, ExerciseActivity::class.java)
+                intent.putExtra("key", positionUnit)
+                startActivity(intent)
+            }
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        oneClick = true
     }
 }

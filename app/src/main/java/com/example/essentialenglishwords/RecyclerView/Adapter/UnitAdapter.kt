@@ -26,6 +26,7 @@ class UnitAdapter(val context: Context,val transferDataUnit: TransferDataUnit):R
 
         holder.textUnit.text = listUnit[position].name
         holder.pictureUnit.setImageDrawable(listUnit[position].image)
+        holder.pageNumber.text = position.plus(1).toString()
 
         holder.rootItem.setOnClickListener {
 

@@ -43,14 +43,10 @@ class ExerciseActivity : AppCompatActivity() {
         exerciseBinding.textExercise.webViewClient = BuiltInWebViewClient()
         exerciseBinding.textExercise.webChromeClient = BuiltInChromeWebViewClient()
 
-//        exerciseBinding.textExercise.addJavascriptInterface(
-//            WebInterface(this@ExerciseActivity),
-//            "Android")/* This Label Is Use To Connect With Codes In Javascript */
 
         exerciseBinding.textExercise.loadData(content+content1,"text/html","UTF-8")
 
         exerciseBinding.textAnswer.settings.javaScriptEnabled = true
-        //exerciseBinding.textExercise.addJavascriptInterface("JSBridge")
 
         exerciseBinding.textAnswer.settings.builtInZoomControls = true
         exerciseBinding.textAnswer.settings.displayZoomControls = false
@@ -67,10 +63,6 @@ class ExerciseActivity : AppCompatActivity() {
 
         exerciseBinding.textAnswer.webViewClient = BuiltInWebViewClient()
         exerciseBinding.textAnswer.webChromeClient = BuiltInChromeWebViewClient()
-
-//        exerciseBinding.textExercise.addJavascriptInterface(
-//            WebInterface(this@ExerciseActivity),
-//            "Android")/* This Label Is Use To Connect With Codes In Javascript */
 
         exerciseBinding.textAnswer.loadData(answer,"text/html","UTF-8")
 

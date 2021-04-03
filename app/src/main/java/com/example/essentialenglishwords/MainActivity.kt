@@ -2,9 +2,8 @@ package com.example.essentialenglishwords
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity(), TransferDataUnit {
 
     }
 
-    override fun notifyDataForTransferUnit(position: Int,imageView: ImageView) {
+    override fun notifyDataForTransferUnit(position: Int, imageView: ImageView) {
 
         Intent(this@MainActivity, UnitPage::class.java).apply {
             putExtra("key", position)

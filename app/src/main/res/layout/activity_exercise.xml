@@ -44,5 +44,36 @@ app:layout_constraintTop_toBottomOf="@id/labelAnswer"               />
        </androidx.constraintlayout.widget.ConstraintLayout>
 
    </ScrollView>
+    <View
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#BBD8D5"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <TextView
+        android:id="@+id/loopLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Words"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/nextLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NextLearn"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/loopLearn"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

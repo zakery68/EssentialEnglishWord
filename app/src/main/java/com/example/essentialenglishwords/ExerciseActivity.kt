@@ -1,5 +1,6 @@
 package com.example.essentialenglishwords
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.webkit.*
@@ -11,12 +12,25 @@ import java.io.File
 class ExerciseActivity : AppCompatActivity() {
 
     private val jsonProcess: JsonProcess = JsonProcess()
+    private var positionUnit: Int = 0
+
 
     lateinit var exerciseBinding: ActivityExerciseBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         exerciseBinding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(exerciseBinding.root)
+
+        exerciseBinding.loopLearn.setOnClickListener {
+
+            if (exerciseBinding.loopLearn.text == "Words") {
+                val intent = Intent(this@ExerciseActivity, WordActivity::class.java)
+                intent.putExtra("key", positionUnit)
+                finish()
+                startActivity(intent)
+
+            }
+        }
 
         val positionUnit = intent.getIntExtra("key", 0)
 

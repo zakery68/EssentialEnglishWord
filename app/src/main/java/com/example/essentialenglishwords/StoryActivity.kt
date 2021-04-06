@@ -1,5 +1,6 @@
 package com.example.essentialenglishwords
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,12 +13,24 @@ class StoryActivity : AppCompatActivity() {
 
     val jsonProcess: JsonProcess = JsonProcess()
     var media: MediaPlayer = MediaPlayer()
+    private var positionUnit: Int = 0
+
 
     lateinit var storyBinding: ActivityStoryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         storyBinding = ActivityStoryBinding.inflate(layoutInflater)
         setContentView(storyBinding.root)
+
+        storyBinding.loopLearn.setOnClickListener {
+            if (storyBinding.loopLearn.text == "Exercise") {
+                val intent = Intent(this@StoryActivity, ExerciseActivity::class.java)
+                intent.putExtra("key", positionUnit)
+                finish()
+                startActivity(intent)
+
+            }
+        }
 
         val positionStory = intent.getIntExtra("key", 0)
 

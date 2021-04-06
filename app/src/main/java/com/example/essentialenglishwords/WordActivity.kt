@@ -1,5 +1,6 @@
 package com.example.essentialenglishwords
 
+import android.content.Intent
 import android.content.res.AssetFileDescriptor
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -22,6 +23,18 @@ class WordActivity : AppCompatActivity(), TransferDataWord {
         super.onCreate(savedInstanceState)
         wordBinding = ActivityWordBinding.inflate(layoutInflater)
         setContentView(wordBinding.root)
+
+
+        wordBinding.loopLearn.setOnClickListener {
+
+            if (wordBinding.loopLearn.text=="Story"){
+                val intent=Intent(this@WordActivity,StoryActivity::class.java)
+                intent.putExtra("key",positionUnit)
+                finish()
+                startActivity(intent)
+            }
+
+        }
 
         positionUnit = intent.getIntExtra("key", 0)
 

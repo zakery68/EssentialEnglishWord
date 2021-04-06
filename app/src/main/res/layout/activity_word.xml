@@ -4,79 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WordActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="5dp"
+    tools:context=".WordActivity">
 
     <View
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/backPage"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginStart="10dp"
         android:adjustViewBounds="true"
+        android:background="@color/white"
         android:scaleType="centerCrop"
         android:src="@drawable/back"
-        android:background="@color/white"
-        android:layout_marginStart="10dp"
-        app:layout_constraintTop_toTopOf="@id/actionBar"
         app:layout_constraintBottom_toBottomOf="@id/actionBar"
-        app:layout_constraintLeft_toLeftOf="@id/actionBar"/>
+        app:layout_constraintLeft_toLeftOf="@id/actionBar"
+        app:layout_constraintTop_toTopOf="@id/actionBar" />
 
     <TextView
         android:id="@+id/numberPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Unit 1"
-        android:textSize="25sp"
-        android:textColor="@color/black"
         android:layout_marginStart="20dp"
-        app:layout_constraintTop_toTopOf="@id/actionBar"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@id/actionBar"
-        app:layout_constraintLeft_toRightOf="@id/backPage"/>
+        app:layout_constraintLeft_toRightOf="@id/backPage"
+        app:layout_constraintTop_toTopOf="@id/actionBar"
+        tools:text="Unit 1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewWords"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@id/actionBar"
-        app:layout_constraintBottom_toTopOf="@id/statusBar"/>
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/statusBar"
+        app:layout_constraintTop_toBottomOf="@id/actionBar" />
 
     <View
         android:id="@+id/statusBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/teal_200"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:background="#BBD8D5"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageButton
         android:id="@+id/iconStartPause"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/pause"
-        android:background="@null"
-        android:adjustViewBounds="true"
         android:layout_marginStart="10dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="@id/statusBar"
+        android:src="@drawable/pause"
         app:layout_constraintBottom_toBottomOf="@id/statusBar"
-        app:layout_constraintLeft_toLeftOf="@id/statusBar"/>
+        app:layout_constraintLeft_toLeftOf="@id/statusBar"
+        app:layout_constraintTop_toTopOf="@id/statusBar" />
 
     <TextView
         android:id="@+id/textWordView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:textAllCaps="false"
-        tools:text="Afraid"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/statusBar"
         app:layout_constraintLeft_toRightOf="@id/iconStartPause"
         app:layout_constraintTop_toTopOf="@id/statusBar"
-        app:layout_constraintBottom_toBottomOf="@id/statusBar"/>
+        tools:text="Afraid" />
+
+    <TextView
+        android:id="@+id/loopLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Story"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/nextLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NextLearn"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/loopLearn"
+        app:layout_constraintTop_toTopOf="@id/statusBar"
+        app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
